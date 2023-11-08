@@ -1,8 +1,11 @@
-import "./style.scss"
-function Button(){
+import style from  "./Button.module.scss"
+interface ButtonProps{
+    texto: string
+}
+function Button({texto}:ButtonProps){
     return (
-        <button className="botao">
-            Botão
+        <button className={style.botao}>
+            {texto}
         </button>
     )
 }

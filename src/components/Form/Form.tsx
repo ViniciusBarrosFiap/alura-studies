@@ -1,9 +1,9 @@
 import Button from "../Button/Button"
-import "./style.scss"
+import style from "./Form.module.scss"
 function Form() {
     return (
-        <form action="" className="novaTarefa">
-            <div className="inputContainer">
+        <form action="" className={style.novaTarefa}>
+            <div className={style.inputContainer}>
                 <label htmlFor="tarefa">
                     Adicione um novo estudo
                 </label>
@@ -14,7 +14,7 @@ function Form() {
                 required />
             </div>
 
-            <div className="inputContainer">
+            <div className={style.inputContainer}>
                 <label htmlFor="tempo">
                     Tempo
                 </label>
@@ -26,7 +26,8 @@ function Form() {
                 max="01:30:00"
                 required />
             </div>
-            <Button />
+            <Button 
+                texto = "Adicionar"/>
         </form>
     )
 }

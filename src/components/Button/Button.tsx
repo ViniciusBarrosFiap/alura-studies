@@ -1,10 +1,11 @@
 import style from  "./Button.module.scss"
 interface ButtonProps{
-    texto: string
+    type?: "button" | "submit" | "reset" | undefined 
+    texto?: string
 }
-function Button({texto}:ButtonProps){
+function Button({type,  texto}:ButtonProps){
     return (
-        <button className={style.botao}>
+        <button type={type} className={style.botao}>
             {texto}
         </button>
     )

@@ -7,8 +7,9 @@ import {useState} from "react"
 
 
 function App() {
-  const [tarefas, setTarefas] = useState<Itarefa[] | []>([]);
+  const [tarefas, setTarefas] = useState<Itarefa[]>([]);
   const [selecionado, setSelecionado] = useState<Itarefa>()
+  
   const selecionaTarefa = (tarefaSelecionada : Itarefa) =>{
     setSelecionado(tarefaSelecionada)
     setTarefas(tarefasAnteriosres => tarefasAnteriosres.map(tarefa =>({

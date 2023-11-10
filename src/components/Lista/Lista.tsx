@@ -13,8 +13,8 @@ function Lista({  tarefas, selecionaTarefa  } : Props) {
                 {tarefas.map((item) => {
                     return (
                         <Item
-                            key={item.id}
                             selecionaTarefa = {selecionaTarefa}
+                            key={item.id}
                             // tarefa={item.tarefa}
                             // tempo={item.tempo}
                             {...item}

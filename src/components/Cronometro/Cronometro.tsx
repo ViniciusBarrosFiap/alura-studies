@@ -5,9 +5,10 @@ import { tempoParaSegundos } from "../../common/utils/time";
 import { Itarefa } from "../../types/tarefa";
 import { useState, useEffect } from "react";
 interface CronometroProps {
-    selecionado: Itarefa | undefined
+    selecionado: Itarefa | undefined,
+    finalizarTarefa: () => void
 }
-function Cronometro({ selecionado }: CronometroProps) {
+function Cronometro({ selecionado,  finalizarTarefa}: CronometroProps) {
     const [tempo, setTempo] = useState<number>()
     const regressiva = (contador: number = 0) => {
         setTimeout(() => {
@@ -15,6 +16,7 @@ function Cronometro({ selecionado }: CronometroProps) {
                 setTempo(contador - 1)
                 return regressiva(contador - 1)
             }
+            finalizarTarefa()
         }, 1000);
     }
     useEffect(() => {

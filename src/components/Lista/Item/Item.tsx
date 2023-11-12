@@ -5,7 +5,7 @@ interface Props extends Itarefa{
   }
 function Item({tarefa, tempo, selecionado, completado, id, selecionaTarefa}: Props) {
     return (
-        <li className={`${style.item} ${selecionado ? style.itemSelecionado : ""}`} onClick={()=> selecionaTarefa({
+        <li className={`${style.item} ${selecionado ? style.itemSelecionado : ""} ${completado ? style.itemCompletado : ""} `} onClick={()=> selecionaTarefa({
             tarefa,
             tempo,
             selecionado,
@@ -14,6 +14,7 @@ function Item({tarefa, tempo, selecionado, completado, id, selecionaTarefa}: Pro
         })}>
             <h3>{tarefa}</h3>
             <span>{tempo}</span>
+            {completado && <span className={style.concluido} aria-label="Item completo"></span>}
         </li>
     )
 }
